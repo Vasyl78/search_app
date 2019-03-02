@@ -20,6 +20,11 @@ gem 'simple_form', '~> 4.1'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'reform', '2.2.4'
+gem 'reform-rails', '0.1.3'
+gem 'trailblazer'
+gem 'trailblazer-rails'
+
 group :development, :test do
   gem 'pry', '~> 0.12.2'
   gem 'rspec-rails', '~> 3.8.1'
