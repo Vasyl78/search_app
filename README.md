@@ -16,3 +16,15 @@ $ rails db:setup
 ```sh
 $ rails s
 ```
+
+## First solution here (without trailblazer)
+```sh
+$ git fetch
+$ git checkout solve-task-with-service-obj
+```
+### Write or paste any of this sring to input field
+    Lisp Common
+    Interpreted "Thomas Eugene"
+    Interpreted "Eugene Thomas"
+    Scripting Microsoft
+    Microsoft Scripting
