@@ -2,11 +2,18 @@
 
 class SearchesController < ApplicationController
   def search
-    uri_link = 'https://gist.githubusercontent.com/g3d/8f524cb3252d9e026d3f33196c1b51dd/raw/ac40d1510efbe4674a69aff7e19b5d894826be38/data.json'
-    uri = URI.parse uri_link
-    res = Net::HTTP.get uri
+    res = SearchData::SearchByQuery.new(
+      query: search_query[:query],
+      search_data: ReadData::SearchedData.call
+    ).call
     respond_to do |format|
-      format.json { render json: JSON.parse(res) }
+      format.json { render json: res }
     end
+  end
+
+  private
+
+  def search_query
+    params.require(:search).permit(:query)
   end
 end
