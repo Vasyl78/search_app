@@ -23,7 +23,6 @@
     var posting = $.post(url, data);
 
     posting.done(function(data) {
-      console.log(data);
       document.getElementById('content').innerHTML = JSON.stringify(data);
     });
 
