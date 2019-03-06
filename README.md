@@ -22,7 +22,14 @@ $ rails s
 $ git fetch
 $ git checkout solve-task-with-service-obj
 ```
-### Write or paste any of this sring to input field
+
+## Second solution here (with trailblazer)
+```sh
+$ git fetch
+$ git checkout solve-task-with-trailblazer
+```
+
+## Write or paste any of this sring to input field
     Lisp Common
     Interpreted "Thomas Eugene"
     Interpreted "Eugene Thomas"
