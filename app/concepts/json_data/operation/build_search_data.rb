@@ -9,7 +9,7 @@ class JsonData::BildSearchData < Trailblazer::Operation
   end
 
   def build_serarch_data!(options, **)
-    options[:search_data] = options[:file_data].map do |element|
+    options[:file_data] = options[:file_data].map do |element|
       make_element_searchable(element)
     end
   end
@@ -18,6 +18,8 @@ class JsonData::BildSearchData < Trailblazer::Operation
     data_array = [element[:name], element[:type], element[:designed_by]]
     {
       name: element[:name],
+      type: element[:type],
+      designed_by: element[:designed_by],
       searchable_data: build_searchable_data(data_array).flatten
     }
   end

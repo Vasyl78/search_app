@@ -22,8 +22,20 @@
 
     var posting = $.post(url, data);
 
+    var content = '<section id="features"><div class="container"><div class="row aln-center">'
+
+
+
     posting.done(function(data) {
-      document.getElementById('content').innerHTML = JSON.stringify(data);
+      var div = document.getElementById('content');
+      // div.innerHTML = JSON.stringify(data);
+
+      data.forEach(function(element) {
+        content = content + '<div class="col-4 col-6-medium col-12-small"><section><header><h3>'
+        + element.name + '</h3></header><h4>' + element.type + '</h4><p>' + element.designed_by + '</p></section></div>'
+      });
+      content = content + '</div></div></div></section>'
+      div.innerHTML = content;
     });
 
     posting.error(function(data) {

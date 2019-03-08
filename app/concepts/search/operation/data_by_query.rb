@@ -26,7 +26,7 @@ class Search::DataByQuery < Trailblazer::Operation
   end
 
   def buid_search_data!(options, **)
-    options[:search_data] = JsonData::BildSearchData.call[:search_data]
+    options[:search_data] = JsonData::BildSearchData.call[:file_data]
   end
 
   def find_data_by_positive_query!(options, **)
@@ -46,6 +46,8 @@ class Search::DataByQuery < Trailblazer::Operation
   end
 
   def data_formatting!(options, **)
-    options[:response] = options[:search_data].map { |obj| obj[:name] }
+    options[:response] = options[:search_data].map do |obj|
+      obj.except!(:searchable_data)
+    end
   end
 end
